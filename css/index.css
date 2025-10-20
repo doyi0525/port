@@ -1,0 +1,1573 @@
+:root {
+    --pupple: #9c30f5;
+    --blue: #c4e6ff;
+      --br-top:    rgba(198,146,96,.28);   /* 코코아 하이라이트 */
+  --br-bottom: rgba(255,205,160,.24);  /* 크림/앰버 하이라이트 */
+  --br-film:   rgba(120,84,56,.14);    /* 얇은 브라운 필름 */
+
+}
+
+
+/* 
+#intro, #about, #skill, #work, #project, #contect{
+  background: transparent !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+} */
+
+
+
+
+#milkyway{ position:fixed; inset:0; pointer-events:none; z-index:2 !important; }
+.lavender-field{ position:fixed; inset:0; pointer-events:none; z-index:1 !important; }
+header, main, footer, section{ position:relative; z-index:3 !important; }
+
+/* === Lavender ↑ & Gray slightly lighter (overlay override) === */
+.lavender-field{
+  background:
+    /* 라벤더 글로우 범위/강도 업 */
+    radial-gradient(84% 68% at 12% -10%, rgba(178,155,255,.58), rgba(178,155,255,0) 74%),
+    radial-gradient(84% 68% at 90% 110%, rgba(246,205,255,.42), rgba(246,205,255,0) 76%),
+    /* 수직 워시: 그레이를 한 톤 밝게(알파 ↓) */
+    linear-gradient(180deg,
+      rgba(16,22,52,.42) 0%,    /* 딥그레이 살짝 밝게 */
+      rgba(38,52,98,.30) 40%,
+      rgba(86,82,120,.22) 70%,
+      rgba(60,66,98,.14) 100%
+    );
+}
+
+/* 물결 드리프트 레이어도 라벤더 기여 ↑, 그레이 ↓ */
+.lavender-field::before{
+  background:
+    radial-gradient(130% 62% at 50% 120%, rgba(175,155,255,.28), rgba(175,155,255,0) 60%),
+    linear-gradient(100deg, rgba(155,163,220,.26), rgba(155,163,220,0));
+}
+.lavender-field::after{
+  background:
+    radial-gradient(120% 58% at 50% -20%, rgba(186,166,255,.22), rgba(186,166,255,0) 60%),
+    /* 회색 필름은 더 밝게(알파 더 낮춤) */
+    linear-gradient(260deg, rgba(50,58,90,.10), rgba(50,58,90,0));
+}
+
+
+
+
+
+
+
+
+header {
+    position: fixed;
+    /* display: flex; */
+    width: 100%;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 1vw 2vw;
+    box-sizing: border-box;
+    
+
+    & h1 {
+        width: 10vw;
+        margin: 0 auto;
+        position: fixed;
+         z-index: 99999;
+         top: 2;
+            left: 48vw;
+        
+        & img {
+            width: 100%;
+            left: -3vw;
+        }
+
+        & .img_star {
+            position: absolute;
+            top: -1vw;
+            left: -1vw;
+            z-index: 999;
+            width: 7vw;
+            animation-name: scaleAnimation2;
+            /* 위에서 정의한 애니메이션 이름 */
+            animation-duration: 5s;
+            /* 애니메이션 지속 시간 */
+            animation-iteration-count: infinite;
+            /* 무한 반복 */
+
+        }
+
+        & .img_star1 {
+            position: absolute;
+            top: -1vw;
+            left: 4vw;
+           
+            z-index: 999;
+            width: 7vw;
+            animation-name: scaleAnimation2;
+            /* 위에서 정의한 애니메이션 이름 */
+            animation-duration: 10s;
+            /* 애니메이션 지속 시간 */
+            animation-iteration-count: infinite;
+            /* 무한 반복 */
+
+        }
+    }
+
+
+}
+
+.gnb>li.active {
+    background-color: var(--blue);
+}
+
+/* = #c4e6ff */
+.gnb>li.active a {
+    color: #400158;
+}
+
+.gnb>li {
+    transition: transform 0.3s ease;
+    /* 부드럽게 */
+}
+
+.gnb>li.active {
+    transform: scale(1.15);
+    /* 15% 확대 */
+    z-index: 2;
+    /* 겹칠 경우 위로 */
+}
+
+.gnb {
+    /* display: flex; */
+    /* gap: 2vw;
+    padding-right: 2vw; */
+   
+    position: absolute;
+    top: 2vw;
+
+    & li {
+        width: 5vw;
+        height: 5vw;
+        border: 5px dotted #98caff;
+        border-radius: 50%;
+        margin-bottom: 2vw;
+
+        &:hover {
+            background-color: #c4e6ff;
+
+            &:hover a {
+                color: #400158;
+
+            }
+
+        }
+
+
+    }
+
+
+    & a {
+        color: #98caff;
+        font-size: 1vw;
+        font-weight: bold;
+
+
+        -webkit-text-stroke: 1.2px #3C2B2D;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.9vw 0;
+        box-sizing: border-box;
+
+
+
+    }
+}
+
+
+@media (max-width:1280px) {
+   .gnb {
+    /* display: flex; */
+   
+    margin-right: 2vw;
+   
+    position: absolute;
+    top: 2vw;
+
+    & li {
+        width: 7.5vw;
+        height: 7.5vw;
+        border: 1vw dotted #98caff;
+        border-radius: 50%;
+       
+
+        &:hover {
+            background-color: #c4e6ff;
+
+            &:hover a {
+                color: #400158;
+
+            }
+
+        }
+
+
+    }
+
+
+    & a {
+        color: #98caff;
+        font-size: 2vw;
+        font-weight: bold;
+
+
+        -webkit-text-stroke: 1.2px #3C2B2D;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.9vw 0;
+        box-sizing: border-box;
+
+
+
+    }
+}
+}
+
+@media (max-width:1024px) {
+  
+}
+
+@media (max-width:768px) {
+ 
+}
+
+
+#intro {
+    /* background-image: url(./../img/backmain.png);
+
+    
+    background-repeat: no-repeat;
+    background-size: 100% 100%; */
+
+    padding-bottom: 10vw;
+
+    & .flex1 {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 6vw;
+        box-sizing: border-box;
+
+
+        & .img_c {
+            width: 45vw;
+            height: auto;
+
+            & img {
+                width: 100%;
+                animation-name: moveY;
+                animation-duration: 2s;
+                /* 2초 동안 */
+                animation-iteration-count: infinite;
+
+            }
+
+            & h3 {
+
+                position: absolute;
+                top: 24vw;
+                left: 12vw;
+                color: #98caff;
+                font-size: 4vw;
+                font-weight: 700;
+                text-align: center;
+                -webkit-text-stroke: 1px #3C2B2D;
+            }
+
+            & h2 {
+                color: #98caff;
+                font-size: 6vw;
+                font-weight: bold;
+                text-align: center;
+                padding-top: 4vw;
+
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #add2fa, 0 0 30px #98caff, 0 0 40px #007bff;
+                /* 빛나는 그림자 효과 */
+                animation: glow 1s ease-in-out infinite alternate;
+            }
+
+        }
+    }
+
+
+
+
+
+    & .img_d {
+        width: 36vw;
+        height: auto;
+
+        padding-top: 5vw;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    & .img_e {
+
+        top: 10vw;
+        right: 15vw;
+        position: relative;
+
+
+        & .d1 {
+            position: absolute;
+            width: 15vw;
+            top: -6vw;
+            right: 10vw;
+
+            & img {
+                width: 100%;
+                animation-name: move1Y;
+                animation-duration: 5s;
+                /* 2초 동안 */
+                animation-iteration-count: infinite;
+            }
+        }
+
+        & .d2 {
+            position: absolute;
+            width: 9vw;
+            top: 17vw;
+            right: -9vw;
+
+            & img {
+                width: 100%;
+                animation: moveAndRotate 8s infinite;
+            }
+        }
+
+        & .d3 {
+            position: absolute;
+            width: 16vw;
+            right: -14vw;
+            top: 1vw;
+
+            & img {
+                width: 100%;
+                animation-name: moveY;
+                animation-duration: 4s;
+                /* 2초 동안 */
+                animation-iteration-count: infinite;
+            }
+        }
+
+        /* & .d4 {
+            position: absolute;
+            width: 7vw;
+            top: 7vw;
+            right: 1vw;
+
+            & img {
+                width: 100%;
+                animation: moveAndRotate 5s infinite;
+            }
+        } */
+
+        & .d5 {
+            position: absolute;
+            width: 5vw;
+            top: 4vw;
+            right: 23vw;
+
+            & img {
+                width: 100%;
+                animation: moveAndRotate 10s infinite;
+            }
+        }
+
+        & .d6 {
+            position: absolute;
+            width: 12vw;
+
+            top: -7vw;
+            right: -3vw;
+
+            & img {
+                width: 100%;
+                animation-name: scaleAnimation;
+
+                animation-duration: 2s;
+
+                animation-iteration-count: infinite;
+
+            }
+        }
+
+        & .d7 {
+            position: absolute;
+            width: 11vw;
+            top: 13vw;
+            right: 21vw;
+
+            & img {
+                width: 100%;
+                animation-name: move1Y;
+                animation-duration: 3s;
+
+                animation-iteration-count: infinite;
+            }
+        }
+
+        & .d8 {
+            position: absolute;
+            width: 7vw;
+            top: 10vw;
+            right: 24vw;
+
+            & img {
+                width: 100%;
+                animation-name: scaleAnimation;
+
+                animation-duration: 4s;
+
+                animation-iteration-count: infinite;
+
+            }
+        }
+
+        & .d9 {
+            position: absolute;
+            width: 15vw;
+            top: -1vw;
+            right: 9vw;
+
+            & img {
+                width: 100%;
+
+                animation-name: scaleAnimation1;
+
+                animation-duration: 15s;
+
+                animation-iteration-count: infinite;
+
+
+            }
+        }
+
+        & .d10 {
+            position: absolute;
+            width: 16vw;
+            top: 5vw;
+            right: -12vw;
+
+            & img {
+                width: 100%;
+
+                animation-name: scaleAnimation2;
+
+                animation-duration: 15s;
+
+                animation-iteration-count: infinite;
+
+
+            }
+        }
+
+
+
+        & .d11 {
+            position: absolute;
+            width: 23vw;
+            top: 9.5vw;
+            right: -2.6vw;
+
+            & img {
+                width: 100%;
+
+
+                opacity: 0;
+                animation: blink 3s infinite;
+
+            }
+        }
+
+
+    }
+}
+
+
+@keyframes blink {
+
+    0%,
+    90%,
+    100% {
+        opacity: 0;
+    }
+
+    92%,
+    99% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px var(--blue), 0 0 30px #007bff, 0 0 40px #007bff;
+    }
+
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #63c5fa, 0 0 30px #63c5fa, 0 0 40px #63c5fa;
+        /* 빛의 밝기/색상 변화 */
+    }
+}
+
+@keyframes moveAndRotate {
+    0% {
+        transform: translateX(1vw) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(1.5vw) rotate(120deg);
+    }
+
+    100% {
+        transform: translateX(1vw) rotate(360deg);
+    }
+}
+
+
+
+@keyframes moveY {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        /* 중간에 멈춰서 10px 움직이고 */
+        transform: translateY(1vw);
+    }
+
+    100% {
+        /* 다시 0px로 돌아오도록 */
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes move1Y {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        /* 중간에 멈춰서 10px 움직이고 */
+        transform: rotate(20deg);
+    }
+
+    100% {
+        /* 다시 0px로 돌아오도록 */
+        transform: rotate(0deg);
+    }
+}
+
+
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1);
+        /* 시작 크기 */
+    }
+
+
+    50% {
+        transform: scale(1.1);
+        /* 커진 크기 */
+    }
+
+
+
+    100% {
+        transform: scale(1);
+        /* 원래 크기 */
+    }
+}
+
+
+
+@keyframes scaleAnimation1 {
+    0% {
+        transform: scale(1);
+        /* 시작 크기 */
+    }
+
+    25% {
+        transform: scale(0.9);
+        /* 커진 크기 */
+    }
+
+    50% {
+        transform: scale(1.1);
+        /* 커진 크기 */
+    }
+
+    75% {
+        transform: scale(0.8);
+        /* 커진 크기 */
+    }
+
+    100% {
+        transform: scale(1);
+        /* 원래 크기 */
+    }
+}
+
+
+@keyframes scaleAnimation2 {
+    0% {
+        transform: scale(1);
+        /* 시작 크기 */
+    }
+
+    25% {
+        transform: scale(0.8);
+        /* 커진 크기 */
+    }
+
+    50% {
+        transform: scale(0.6);
+        /* 커진 크기 */
+    }
+
+    75% {
+        transform: scale(0.8);
+        /* 커진 크기 */
+    }
+
+    100% {
+        transform: scale(1);
+        /* 원래 크기 */
+    }
+}
+
+
+
+
+#about {
+    padding: 2vw 4vw;
+    box-sizing: border-box;
+    width: 100%;
+    /* background-image: url(./../img/backmain2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-top: 3px solid #400158; */
+
+}
+
+#about h2 {
+    color: #98caff;
+    font-size: 10vw;
+    font-weight: bold;
+    text-align: right;
+    -webkit-text-stroke: 0.1vw #3C2B2D;
+}
+
+#about h3{
+    color: #3C2B2D;
+    -webkit-text-stroke: 0.08vw #98caff;
+    font-size: 3vw;
+    font-weight: 800;
+    text-align: center;
+}
+
+#about .info_img{
+    width: 2.5vw;
+
+  
+}
+
+#about  .about_intro{
+    width: 60%;
+    margin: 0 auto;
+}
+
+#about h4{
+    color: #3C2B2D;
+    /* -webkit-text-stroke: 0.08vw #98caff; */
+    font-size: 2vw;
+    font-weight: 500;
+    text-align: left;
+    padding-bottom: 2vw;
+    padding-left: 10vw;
+}
+
+#about .padi1{
+    padding-left: 11vw;
+}
+
+#about .pin-inner {
+    position: sticky;
+    top: 0;
+    height: 75vh;
+    /* 화면에 고정 */
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 0;
+}
+
+#about .about-photos {
+    width: 100%;
+    height: auto;
+    /* 래퍼는 자동 높이 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    /* Wiggle/그림자 안 잘리게 */
+}
+
+#about .aboutSwiper {
+    width: 100%;
+    height: auto !important;
+    /* Swiper 높이 자동 */
+    overflow: visible !important;
+
+}
+
+#about .aboutSwiper .swiper-wrapper {
+    align-items: center;
+    /* 카드 수직 중앙 */
+}
+
+/* 카드: 이미지 짤림 방지 – 세로 기준으로만 제한 */
+#about .photo {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 19vw;
+    /* 원하면 320~360px 조절 */
+    height: auto;
+    max-height: 70vh;
+    /* 세로 한계(필요시 60~70vh) */
+    aspect-ratio: 3 / 4;
+    border-radius: 2.5vw;
+    overflow: hidden;
+    transform: translateX(var(--sway-x, 0)) rotate(var(--sway-rot, 0));
+    will-change: transform;
+}
+
+#about .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* (옵션) 어두운 밴드가 보이면 배경 레이어 숨기기 */
+#about .about-photos__bg {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #about .photo {
+        max-width: 60vw;
+        max-height: 48vh;
+    }
+}
+
+
+#about .about-photos__bg {
+    position: absolute;
+    inset: 0;
+    /* background-image: url('./../img/pattern.svg'); */
+    /* 없으면 제거 가능 */
+    background-size: 19vw 19vw;
+    background-repeat: repeat;
+    opacity: .25;
+    pointer-events: none;
+}
+
+#about .about-photos__inner {
+    position: relative;
+    width: min(80vw, 80vw);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#about .about-photos__title {
+    margin: 0 0 1vw 2vw;
+    font-size: clamp(18px, 2.2vw, 24px);
+    color: #333;
+    font-weight: 600;
+}
+
+
+#about .aboutSwiper .swiper-wrapper {
+    align-items: center;
+}
+
+#about .aboutSwiper .swiper-slide {
+    height: auto;
+}
+
+#about .photo {
+    position: relative;
+    aspect-ratio: 3/4;
+    width: min(19vw, 19vw);
+    border-radius: 2.5vw;
+    overflow: hidden;
+    /* box-shadow: 0 3vw 6vw rgba(0, 0, 0, .25), 0 1vw 6vw rgba(0, 0, 0, .12); */
+    transform-origin: center;
+    transition: transform .35s ease, box-shadow .35s ease;
+    will-change: transform;
+    --base-rot: 0deg;
+    --click-rot: 0deg;
+    --click-shift: 0px;
+    --sway-x: 0px;
+    --sway-rot: 0deg;
+    transform: translateX(calc(var(--click-shift) + var(--sway-x))) rotate(calc(var(--base-rot) + var(--click-rot) + var(--sway-rot)));
+}
+
+/* 약간 기울기 패턴 */
+#about .aboutSwiper .swiper-slide:nth-child(4n+1) .photo {
+    --base-rot: -4deg;
+}
+
+#about .aboutSwiper .swiper-slide:nth-child(4n+2) .photo {
+    --base-rot: 3deg;
+}
+
+#about .aboutSwiper .swiper-slide:nth-child(4n+3) .photo {
+    --base-rot: -2deg;
+}
+
+#about .aboutSwiper .swiper-slide:nth-child(4n+4) .photo {
+    --base-rot: 2deg;
+}
+
+#about .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#about .photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(50% 70% at 50% 30%, rgba(172, 213, 240, 0.06), rgba(163, 223, 247, 0.22));
+    pointer-events: none;
+    mix-blend-mode: soft-light;
+} 
+
+#about .photo:hover {
+    transform: translateX(calc(var(--click-shift) + var(--sway-x))) rotate(calc(var(--base-rot) + var(--click-rot) + var(--sway-rot))) scale(1.03);
+    box-shadow: 0 2.5vw 6vw rgba(0, 0, 0, .35), 0 1.5vw 3vw rgba(0, 0, 0, .18);
+}
+
+/* 네비 버튼 */
+#about .about-photos__nav {
+    display: flex;
+    gap: 2vw;
+    justify-content: center;
+    margin-top: 2vw;
+}
+
+#about .about-photos__nav .prev,
+#about .about-photos__nav .next {
+    width: 5vw;
+    /* 버튼 크기 */
+    height: 5vw;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* margin: 0 auto; */
+}
+
+/* 왼쪽 화살표 PNG */
+#about .about-photos__nav .prev {
+    background-image: url(./../img/arrow_l_b.png);
+
+    &:hover {
+        background-image: url(./../img/arrow_l_p.png);
+    }
+}
+
+/* 오른쪽 화살표 PNG */
+#about .about-photos__nav .next {
+    background-image: url(./../img/arrow_r_b.png);
+
+    &:hover {
+        background-image: url(./../img/arrow_r_p.png);
+    }
+}
+
+
+/* 반응형 크기 */
+@media (max-width:1280px) {
+    #about .photo {
+        width: min(28vw, 28vw);
+    }
+}
+
+@media (max-width:1024px) {
+    #about .photo {
+        width: min(34vw, 28vw);
+    }
+}
+
+@media (max-width:768px) {
+    #about .photo {
+        width: 70vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+#btn_top {
+    position: fixed;
+    top: 85vh;
+    right: 5vw;
+    width: 5vw;
+    height: 5vw;
+    cursor: pointer;
+    z-index: 5;
+
+    & img {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.about_flex{
+    display: flex;
+    padding-bottom: 7vw;
+    padding-left: 10vw;
+
+    & .about_po{
+        position: relative;
+        width: 30%;
+
+        & .doyi22_1{
+            width: 20vw;
+            position: absolute;
+        }
+
+        & .doyi22_2{
+            width: 20vw;
+            position: absolute;
+            top: 10vw;
+           left: -1.5vw;
+        }
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#skill {
+
+    padding: 2vw 4vw 2vw 15vw;
+    box-sizing: border-box;
+   
+    width: 100%;
+    /* background-image: url(./../img/backmain.png);
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-top: 3px solid #400158; */
+
+    & article {
+        display: flex;
+        gap: 2vw;
+        padding-bottom: 2vw;
+
+        & h2 {
+            color: #98caff;
+            font-size: 10vw;
+            font-weight: bold;
+            text-align: right;
+            -webkit-text-stroke: 2px #3C2B2D;
+        }
+
+    }
+
+
+    .skill_wrap {
+        width: 30%;
+        padding: 1vw;
+        border: 2px solid #98caff;
+        border-radius: 2vw;
+        margin: 0 auto;
+
+        & h4 {
+            font-size: 2vw;
+            font-weight: bold;
+            color: #98caff;
+            -webkit-text-stroke: 1px #3C2B2D;
+
+        }
+
+
+        & .skill_bg {
+            width: 100%;
+            background-color: #efefef;
+            border-radius: 1vw;
+
+
+            & .skill_bar {
+                color: #fff;
+                padding: 1vw 0;
+                width: 0;
+                text-align: center;
+                transition: width .8s ease;
+            }
+
+            & .html {
+                background-color: rgb(123, 151, 247);
+                border-radius: 1vw 0 0 1vw;
+            }
+
+            & .css {
+                background-color: rgb(69, 58, 216);
+                border-radius: 1vw 0 0 1vw;
+            }
+
+            & .js {
+                background-color: rgb(62, 212, 150);
+                border-radius: 1vw 0 0 1vw;
+            }
+
+            & .jq {
+                background-color: rgb(245, 107, 15);
+                border-radius: 1vw 0 0 1vw;
+            }
+
+            & .pigma {
+                background-color: rgb(252, 56, 56);
+                border-radius: 1vw 0 0 1vw;
+            }
+        }
+
+
+
+
+    }
+
+
+    & .skill_wrap1 {
+        width: 40%;
+        padding: 1vw;
+        border: 1px solid #98caff;
+        border-radius: 2vw;
+        margin: 0 auto;
+
+        & h4 {
+            font-size: 2vw;
+            font-weight: bold;
+            color: #98caff;
+            -webkit-text-stroke: 1px #3C2B2D;
+        }
+
+
+        & .skill_bg1 {
+            width: 100%;
+            background-color: #efefef;
+            border-radius: 1vw;
+
+
+            & .skill_bar {
+                color: #fff;
+                padding: 1vw 0;
+                width: 0;
+                text-align: center;
+                transition: width .8s ease;
+            }
+
+            & .html {
+                background-color: rgb(255, 142, 66);
+                border-radius: 1vw 0 0 1vw;
+            }
+
+            & .css {
+                background-color: rgb(69, 58, 216);
+                border-radius: 1vw 0 0 1vw;
+            }
+
+            & .js {
+                background-color: rgb(243, 240, 79);
+                border-radius: 1vw 0 0 1vw;
+            }
+
+            & .jq {
+                background-color: rgb(15, 180, 245);
+                border-radius: 1vw 0 0 1vw;
+            }
+
+            & .pigma {
+                background-color: rgb(235, 88, 240);
+                border-radius: 1vw 0 0 1vw;
+            }
+        }
+
+
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+#work {
+    padding: 2vw 4vw 2vw 15vw;
+    box-sizing: border-box;
+    width: 100%;
+    /* background-image: url(./../img/backmain2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-top: 3px solid #400158; */
+
+    /* ✅ grid 제거 */
+    /* display: grid; */
+
+    /* #work 전용 변수 */
+    --w: 23vw;
+    /* 카드 가로 */
+    --h: 70vh;
+    /* 카드 세로 */
+    --flip-speed: .6s;
+    /* 플립 속도 */
+
+}
+
+/* 타이틀 */
+#work h2 {
+    color: #98caff;
+    font-size: 10vw;
+    font-weight: bold;
+    text-align: right;
+    -webkit-text-stroke: 2px #3C2B2D;
+}
+
+/* 내부 공통 */
+#work * {
+    box-sizing: border-box;
+}
+
+/* ✅ 카드 묶음(article 2번째)을 플렉스 컨테이너로 */
+#work>article:nth-of-type(2) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* 여러 줄 배치 */
+    gap: 2vw;
+    /* 카드 간격 */
+    align-items: flex-start;
+    /* 상단 정렬 */
+    overflow: visible;
+    /* 필요시 정렬 옵션
+     justify-content: flex-start; 
+     row-gap/column-gap 대신 gap만으로 충분 */
+}
+
+/* 카드 아이템: 고정 너비(변수), 줄바꿈 유지 */
+#work .card-flip {
+    position: relative;
+    width: var(--w);
+    height: var(--h);
+    /* flex 아이템 축소 방지(너비 유지) */
+    flex: 0 0 var(--w);
+    /* perspective: 1000px; */
+    overflow: visible;
+    cursor: pointer;
+}
+
+/* 플립 컨테이너 */
+#work .flip {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform var(--flip-speed) cubic-bezier(.2, .8, .2, 1);
+    overflow: visible;
+
+}
+
+/* 앞/뒤 면 */
+#work .face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    overflow: visible;
+}
+
+#work .face .imgwrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    /* 이미지 넘침 방지 */
+    /* 필요시 */
+}
+
+#work .face img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover;
+  display: block; */
+}
+
+#work .back {
+    transform: rotateY(180deg);
+}
+
+/* 호버 시 플립 */
+#work .card-flip:hover .flip {
+    transform: rotateY(180deg);
+}
+
+/* 모션 줄이기 */
+@media (prefers-reduced-motion: reduce) {
+    #work .flip {
+        transition: none;
+    }
+}
+
+/* (옵션) 작은 화면에서 카드 크기 자동 축소 */
+@media (max-width: 1024px) {
+    #work {
+        --w: 40vw;
+        --h: 50vh;
+    }
+}
+
+@media (max-width: 600px) {
+    #work {
+        --w: 80vw;
+        --h: 45vh;
+    }
+}
+
+
+
+
+
+
+#project{
+    
+
+
+     & h2 {
+        padding: 0 2vw 0 10vw;
+    box-sizing: border-box;
+
+    width: 100%;
+            color: #98caff;
+            font-size: 10vw;
+            font-weight: bold;
+
+            -webkit-text-stroke: 2px #3C2B2D;
+        }
+
+
+    
+
+
+    & .color_25{
+        width: 80%;
+        height: 45vw;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        padding-left: 5vw;
+
+        & img{
+             width: 27vw;
+        }
+    }
+
+
+        & .pic_1{
+        width: 80%;
+        height: 40vw;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        padding-left: 5vw;
+
+        & img{
+             width: 20vw;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#contect {
+    padding: 2vw 4vw 2vw 10vw;
+    box-sizing: border-box;
+     width: 100%; 
+    /* background-image: url(./../img/backmain2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-top: 3px solid #400158; */
+   
+
+}
+
+#contect article{
+    min-height: 30vw;
+}
+
+#contect h2 {
+    color: #98caff;
+    font-size: 10vw;
+    font-weight: bold;
+    text-align: right;
+    -webkit-text-stroke: 2px #3C2B2D;
+}
+
+#contect .flex_article {
+    width: 100%;
+    display: flex;
+}
+
+#contect .contect_a1 {
+    width: 30%;
+    position: relative;
+ 
+
+
+    .contect_img1 {
+        width: 22vw;
+        position: absolute;
+        top: -5vw;
+        left: 10vw;
+        z-index: 9;
+        & img {
+            width: 100%;
+        }
+    }
+
+      .contect_img2 {
+        width: 14vw;
+        position: absolute;
+         top: 10vw;
+        left: 26vw;
+
+
+        & img {
+            width: 100%;
+        }
+    }
+
+      .contect_img3 {
+        width: 20vw;
+        position: absolute;
+         top: 8vw;
+        left: -2vw;
+
+
+        & img {
+            width: 100%;
+        }
+    }
+
+      .contect_img4 {
+        width: 4vw;
+        position: absolute;
+
+           top: 5vw;
+        left: 0;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+          .contect_img5 {
+        width: 6vw;
+            position: absolute;
+
+    top: -11vw;
+        left: 18vw;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+
+          .contect_img6 {
+        width: 4vw;
+            position: absolute;
+
+                       top: 5vw;
+        left: 33vw;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+
+}
+
+
+
+
+
+#contect .contect_a2 {
+    width: 30%;
+    position: relative;
+
+
+    .contect_img7 {
+        width: 15vw;
+        position: absolute;
+            top: 20vw;
+        left: -13vw;
+        & img {
+            width: 100%;
+        }
+    }
+
+      .contect_img8 {
+        width: 40vw;
+        position: absolute;
+        top: 3vw;
+        right: -29vw;
+        z-index: 9;
+         transform: rotate(-1deg);
+
+
+        & img {
+            width: 100%;
+        }
+    }
+
+      /* .contect_img9 {
+        width: 5vw;
+        position: absolute;
+              top: 15vw;
+        left: 18vw;
+        & img {
+            width: 100%;
+        }
+    } */
+
+    
+
+
+}
+
+
+#contect .contect_a3 {
+    width: 30%;
+    position: relative;
+    top: -3vw;
+
+    .contect_img10 {
+        width: 23vw;
+        position: absolute;
+        top: 2vw;
+        right: -8vw;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+      .contect_img11 {
+        width: 10vw;
+        position: absolute;
+          top: 18vw;
+        right: -11vw;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+      .contect_img12 {
+        width: 4vw;
+        position: absolute;
+                 top: 14vw;
+        right: -9vw;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    
+
+
+}
